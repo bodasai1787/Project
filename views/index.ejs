@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<% if(locals.requestData){ %>
+  <h2>HTML Forms</h2>
+<form method="post" action="/submit">
+  <label for="cityName">Please enter your city:</label><br>
+  <input type="text" id="fname" name="cityName" value="hyderabad"><br>
+  <input type="submit" value="Submit">
+</form> 
+<% }else if(locals.data){%>
+  <div>
+    <h2>Current temprature : <%= data.temp %></h2>
+    <h2>Feels like : <%= data.feels_like %></h2>
+    <h2>Minimum temperature : <%= data.temp_min %></h2>
+    <h2>Maximum temperature : <%= data.temp_max %></h2>
+  </div>
+<%}else{%>
+<h1><%=error.message%></h1>
+<% } %>
+</body>
+</html>
